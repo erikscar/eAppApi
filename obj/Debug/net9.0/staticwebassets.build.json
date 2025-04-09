@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "xoXSgJEZEtNgVJ8TejRQsFDK4zvSvf4Y5l1dbwBlQ6o=",
+  "Source": "eApp",
+  "BasePath": "_content/eApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
