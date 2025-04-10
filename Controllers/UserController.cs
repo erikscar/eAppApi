@@ -16,11 +16,19 @@ public class UserController : Controller
     }
 
     [HttpGet("users")]
-    public async Task<ActionResult<IEnumerable<User>>> GetUser()
+    public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
         var users = await _context.Users.ToListAsync();
         
         return Ok(users);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<User>> GetUserById(int id)
+    {
+        var user = await _context.Users.FindAsync(id);
+
+        return Ok(user);
     }
 
     [HttpPost]
