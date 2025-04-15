@@ -1,5 +1,6 @@
 using eApp.Data;
-using Microsoft.AspNetCore.Builder;
+using eApp.Interfaces;
+using eApp.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<EAppContext>(options =>
