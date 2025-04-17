@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace eApp.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class UserController : Controller
 {
     private readonly EAppContext _context;
@@ -15,7 +15,7 @@ public class UserController : Controller
 
     }
 
-    [HttpGet("users")]
+    [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
         var users = await _context.Users.ToListAsync();
@@ -54,8 +54,6 @@ public class UserController : Controller
 
         return Ok("Usuário Atualizado");
     }
-    [HttpPatch]
-
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteUser(int id)
