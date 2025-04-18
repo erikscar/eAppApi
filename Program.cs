@@ -13,7 +13,9 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<EAppContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+    options
+    .UseLazyLoadingProxies()
+    .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
     assembly => assembly.MigrationsAssembly(typeof(EAppContext).Assembly.FullName)
 ));
 

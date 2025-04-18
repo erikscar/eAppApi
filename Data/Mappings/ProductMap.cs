@@ -28,5 +28,9 @@ public class ProductMap : BaseMap<Product>
 
         builder.Property(product => product.CategoryId)
         .IsRequired();
+
+        builder.HasOne(product => product.Category)
+        .WithMany(category => category.Products)
+        .HasForeignKey(product => product.CategoryId);
     }
 }

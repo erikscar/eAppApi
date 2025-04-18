@@ -25,5 +25,10 @@ public class UserMap : BaseMap<User>
         builder.Property(user => user.PasswordHash)
         .IsRequired()
         .HasColumnType("VARCHAR(255)");
+
+        builder.HasOne(user => user.Cart)
+        .WithOne(cart => cart.User)
+        .HasForeignKey<Cart>(cart => cart.UserId)
+        .IsRequired();
     }
 }
