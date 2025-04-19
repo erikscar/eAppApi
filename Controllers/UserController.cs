@@ -1,4 +1,5 @@
 using eApp.Data;
+using eApp.Interfaces;
 using eApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,16 +10,21 @@ namespace eApp.Controllers;
 [Route("api/[controller]")]
 public class UserController : Controller
 {
-    private readonly EAppContext _context;
-    public UserController(EAppContext context) {
-        _context = context;
+    private readonly IUserRepository _userRepository;
+    public UserController(IUserRepository userRepository) {
+        _userRepository = userRepository;
 
     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
-        var users = await _context.Users.ToListAsync();
+        var users = await _userRepository.GetAllUsers();
+
+         if(users == null )
+        {
+            return BadRequest("Nenhum Usuário foi Encontrado");
+        }
         
         return Ok(users);
     }
@@ -26,7 +32,7 @@ public class UserController : Controller
     [HttpGet("{id}")]
     public async Task<ActionResult<User>> GetUserById(int id)
     {
-        var user = await _context.Users.FindAsync(id);
+        var user = await _userRepository.GetUserById(id);
 
         return Ok(user);
     }
@@ -34,8 +40,8 @@ public class UserController : Controller
     [HttpPost]
     public async Task<ActionResult> PostUser(User user)
     {
-        _context.Users.Add(user);
-        await _context.SaveChangesAsync();
+        await _userRepository.CreateUser(user);
+        await _userRepository.Save();
 
         return Ok("Usuário Cadastrado");
     }
@@ -48,9 +54,9 @@ public class UserController : Controller
             return BadRequest("Usuário Não Encontrado");
         }
 
-        _context.Entry(user).State = EntityState.Modified;
+       _userRepository.UpdateUser(user);
 
-        await _context.SaveChangesAsync();
+        await _userRepository.Save();
 
         return Ok("Usuário Atualizado");
     }
@@ -58,14 +64,14 @@ public class UserController : Controller
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteUser(int id)
     {
-        User userToDelete = await _context.Users.FindAsync(id);
+        User userToDelete = await _userRepository.GetUserById(id);
 
         if(userToDelete == null) {
             return NotFound();
         }
 
-        _context.Users.Remove(userToDelete);
-        await _context.SaveChangesAsync();
+        await _userRepository.DeleteUser(userToDelete);
+        await _userRepository.Save();
 
         return Ok("Usuário Deletado");
     }
