@@ -23,7 +23,7 @@ public class UserController : Controller
 
          if(users == null )
         {
-            return BadRequest("Nenhum Usuário foi Encontrado");
+            return NotFound("Nenhum Usuário Encontrado");
         }
         
         return Ok(users);
@@ -33,6 +33,11 @@ public class UserController : Controller
     public async Task<ActionResult<User>> GetUserById(int id)
     {
         var user = await _userRepository.GetUserById(id);
+
+        if(user == null)
+        {
+            return NotFound("Usuário Não Encontrado");
+        }
 
         return Ok(user);
     }
@@ -51,7 +56,7 @@ public class UserController : Controller
     {
         if(id != user.Id)
         {
-            return BadRequest("Usuário Não Encontrado");
+            return NotFound("Usuário Não Encontrado");
         }
 
        _userRepository.UpdateUser(user);
@@ -67,7 +72,7 @@ public class UserController : Controller
         User userToDelete = await _userRepository.GetUserById(id);
 
         if(userToDelete == null) {
-            return NotFound();
+            return NotFound("Usuário Não Encontrado");
         }
 
         await _userRepository.DeleteUser(userToDelete);
