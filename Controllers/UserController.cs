@@ -11,9 +11,10 @@ namespace eApp.Controllers;
 public class UserController : Controller
 {
     private readonly IUserRepository _userRepository;
-    public UserController(IUserRepository userRepository) {
-        _userRepository = userRepository;
 
+    public UserController(IUserRepository userRepository)
+    {
+        _userRepository = userRepository;
     }
 
     [HttpGet]
@@ -21,11 +22,11 @@ public class UserController : Controller
     {
         var users = await _userRepository.GetAllUsers();
 
-         if(users == null )
+        if (users == null)
         {
             return NotFound("Nenhum Usuário Encontrado");
         }
-        
+
         return Ok(users);
     }
 
@@ -34,7 +35,7 @@ public class UserController : Controller
     {
         var user = await _userRepository.GetUserById(id);
 
-        if(user == null)
+        if (user == null)
         {
             return NotFound("Usuário Não Encontrado");
         }
@@ -54,12 +55,12 @@ public class UserController : Controller
     [HttpPut("{id}")]
     public async Task<ActionResult> PutUser(int id, User user)
     {
-        if(id != user.Id)
+        if (id != user.Id)
         {
             return NotFound("Usuário Não Encontrado");
         }
 
-       _userRepository.UpdateUser(user);
+        _userRepository.UpdateUser(user);
 
         await _userRepository.Save();
 
@@ -71,7 +72,8 @@ public class UserController : Controller
     {
         User userToDelete = await _userRepository.GetUserById(id);
 
-        if(userToDelete == null) {
+        if (userToDelete == null)
+        {
             return NotFound("Usuário Não Encontrado");
         }
 
@@ -80,5 +82,4 @@ public class UserController : Controller
 
         return Ok("Usuário Deletado");
     }
-
 }

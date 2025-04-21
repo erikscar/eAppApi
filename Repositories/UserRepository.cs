@@ -8,13 +8,15 @@ namespace eApp.Repositories;
 public class UserRepository : IUserRepository
 {
     private readonly EAppContext _context;
-    public UserRepository(EAppContext context) {
+
+    public UserRepository(EAppContext context)
+    {
         _context = context;
     }
 
     public async Task CreateUser(User user)
     {
-       await _context.AddAsync(user);
+        await _context.AddAsync(user);
     }
 
     public async Task DeleteUser(User user)
