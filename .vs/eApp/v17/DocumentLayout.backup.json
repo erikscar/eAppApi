@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -115,13 +115,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAA0wFMAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Controllers\\UserController.cs*",
+              "RelativeToolTip": "Controllers\\UserController.cs*",
+              "ViewState": "AgIAABMAAAAAAAAAAAAwwE4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T15:53:57.2Z",
               "EditorCaption": ""
@@ -132,8 +132,8 @@
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\Interfaces\\IUserRepository.cs*",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository.cs*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T15:49:57.453Z",
@@ -141,13 +141,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Repositories\\UserRepository.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwCIAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\UserRepository.cs*",
+              "RelativeToolTip": "Repositories\\UserRepository.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T15:49:41.097Z",
               "EditorCaption": ""

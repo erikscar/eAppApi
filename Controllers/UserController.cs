@@ -20,7 +20,7 @@ public class UserController : Controller
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
-        var users = await _userRepository.GetAllUsers();
+        var users = await _userRepository.GetAllUsersAsync();
 
         if (users == null)
         {
@@ -33,7 +33,7 @@ public class UserController : Controller
     [HttpGet("{id}")]
     public async Task<ActionResult<User>> GetUserById(int id)
     {
-        var user = await _userRepository.GetUserById(id);
+        var user = await _userRepository.GetUserByIdAsync(id);
 
         if (user == null)
         {
@@ -46,8 +46,8 @@ public class UserController : Controller
     [HttpPost]
     public async Task<ActionResult> PostUser(User user)
     {
-        await _userRepository.CreateUser(user);
-        await _userRepository.Save();
+        await _userRepository.CreateUserAsync(user);
+        await _userRepository.SaveAsync();
 
         return Ok("Usuário Cadastrado");
     }
@@ -62,23 +62,21 @@ public class UserController : Controller
 
         _userRepository.UpdateUser(user);
 
-        await _userRepository.Save();
+        await _userRepository.SaveAsync();
 
         return Ok("Usuário Atualizado");
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteUser(int id)
+    public async Task<ActionResult> DeleteUser(int id)
     {
-        User userToDelete = await _userRepository.GetUserById(id);
+        var userToDelete = await _userRepository.DeleteUserAsync(id);
+        await _userRepository.SaveAsync();
 
-        if (userToDelete == null)
+        if (!userToDelete)
         {
             return NotFound("Usuário Não Encontrado");
         }
-
-        await _userRepository.DeleteUser(userToDelete);
-        await _userRepository.Save();
 
         return Ok("Usuário Deletado");
     }

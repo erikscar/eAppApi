@@ -269,3 +269,4 @@ C:\Users\eriks\OneDrive\Desktop\eAppApi\bin\Debug\net9.0\Microsoft.AspNetCore.Js
 C:\Users\eriks\OneDrive\Desktop\eAppApi\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\eriks\OneDrive\Desktop\eAppApi\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\eriks\OneDrive\Desktop\eAppApi\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\eriks\OneDrive\Desktop\eAppApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

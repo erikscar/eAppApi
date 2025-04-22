@@ -1,6 +1,7 @@
 using eApp.Data;
 using eApp.Interfaces;
 using eApp.Models;
+using eApp.Models.DTOs;
 using Microsoft.EntityFrameworkCore;
 
 namespace eApp.Repositories;
@@ -14,27 +15,40 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public async Task CreateUser(User user)
+    public async Task CreateUserAsync(User user)
     {
         await _context.AddAsync(user);
     }
 
-    public async Task DeleteUser(User user)
+    public async Task<bool> DeleteUserAsync(int userId)
     {
-        _context.Users.Remove(user);
+        var user = await _context.Users.FindAsync(userId);
+
+        if(user != null)
+        {
+            _context.Users.Remove(user);
+            return true;
+        }
+
+        return false;
     }
 
-    public async Task<IEnumerable<User>> GetAllUsers()
+    public async Task<ICollection<UserDTO>> GetAllUsersAsync()
     {
-        return await _context.Users.ToListAsync();
+        return await _context.Users
+            .Select(u => new UserDTO { Id = u.Id, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email })
+            .ToListAsync();
     }
 
-    public async Task<User> GetUserById(int userId)
+    public async Task<UserDTO?> GetUserByIdAsync(int userId)
     {
-        return await _context.Users.FindAsync(userId);
+        return await _context.Users
+            .Where(u => u.Id == userId)
+            .Select(u => new UserDTO { Id = u.Id, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email })
+            .FirstOrDefaultAsync();
     }
 
-    public async Task Save()
+    public async Task SaveAsync()
     {
         await _context.SaveChangesAsync();
     }
