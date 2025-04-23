@@ -47,9 +47,23 @@ public class UserController : Controller
         try
         {
             await _userService.CreateUserAsync(user);
-            return Ok("Usuário Cadastrado");
+            return Ok(new { message = "Usuário Cadastrado" });
         }
         catch (ArgumentNullException e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpPost("login")]
+    public async Task<ActionResult> LoginUser(User user)
+    {
+        try
+        {
+            await _userService.LoginUserAsync(user);
+            return Ok("Login Realizado com Sucesso");
+        }
+        catch (UnauthorizedAccessException e)
         {
             return BadRequest(e.Message);
         }

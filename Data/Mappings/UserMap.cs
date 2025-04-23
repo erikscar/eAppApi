@@ -11,11 +11,9 @@ public class UserMap : BaseMap<User>
         base.Configure(builder);
         
         builder.Property(user => user.FirstName)
-        .IsRequired()
         .HasColumnType("VARCHAR(100)");
 
         builder.Property(user => user.LastName)
-        .IsRequired()
         .HasColumnType("VARCHAR(100)");
 
         builder.Property(user => user.Email)
