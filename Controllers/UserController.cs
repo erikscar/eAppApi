@@ -1,8 +1,6 @@
-using eApp.Data;
-using eApp.Interfaces;
 using eApp.Models;
+using eApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace eApp.Controllers;
 
@@ -10,74 +8,78 @@ namespace eApp.Controllers;
 [Route("api/[controller]")]
 public class UserController : Controller
 {
-    private readonly IUserRepository _userRepository;
+    private readonly IUserService _userService;
 
-    public UserController(IUserRepository userRepository)
+    public UserController(IUserService userService)
     {
-        _userRepository = userRepository;
+        _userService = userService;
     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
-        var users = await _userRepository.GetAllUsersAsync();
-
-        if (users == null)
+        try
         {
-            return NotFound("Nenhum Usuário Encontrado");
+            return Ok(await _userService.GetAllUsersAsync());
         }
-
-        return Ok(users);
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(e.Message);
+        }
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<User>> GetUserById(int id)
+    [HttpGet("{userId}")]
+    public async Task<ActionResult<User>> GetUserById(int userId)
     {
-        var user = await _userRepository.GetUserByIdAsync(id);
-
-        if (user == null)
+        try
         {
-            return NotFound("Usuário Não Encontrado");
+            return Ok(await _userService.GetUserDetailsAsync(userId));
         }
-
-        return Ok(user);
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(e.Message);
+        }
     }
 
     [HttpPost]
     public async Task<ActionResult> PostUser(User user)
     {
-        await _userRepository.CreateUserAsync(user);
-        await _userRepository.SaveAsync();
-
-        return Ok("Usuário Cadastrado");
+        try
+        {
+            await _userService.CreateUserAsync(user);
+            return Ok("Usuário Cadastrado");
+        }
+        catch (ArgumentNullException e)
+        {
+            return BadRequest(e.Message);
+        }
     }
 
-    [HttpPut("{id}")]
-    public async Task<ActionResult> PutUser(int id, User user)
+    [HttpPut("{userId}")]
+    public async Task<ActionResult> PutUser(User user, int userId)
     {
-        if (id != user.Id)
+        try
         {
-            return NotFound("Usuário Não Encontrado");
+            await _userService.UpdateUserAsync(user, userId);
+            return Ok("Usuário Atualizado");
         }
-
-        _userRepository.UpdateUser(user);
-
-        await _userRepository.SaveAsync();
-
-        return Ok("Usuário Atualizado");
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(e.Message);
+        }
     }
 
-    [HttpDelete("{id}")]
-    public async Task<ActionResult> DeleteUser(int id)
+    [HttpDelete("{userId}")]
+    public async Task<ActionResult> DeleteUser(int userId)
     {
-        var userToDelete = await _userRepository.DeleteUserAsync(id);
-        await _userRepository.SaveAsync();
-
-        if (!userToDelete)
+        try
         {
-            return NotFound("Usuário Não Encontrado");
+            await _userService.DeleteUserAsync(userId);
+            return Ok("Usuário Deletado");
         }
-
-        return Ok("Usuário Deletado");
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(e.Message);
+        }
     }
 }

@@ -1,7 +1,9 @@
 using eApp.Models;
 
 namespace eApp.Services.Interfaces;
-public interface IUserService {
+
+public interface IUserService
+{
     Task<User> GetUserDetailsAsync(int userId);
     Task<ICollection<User>> GetAllUsersAsync();
     Task CreateUserAsync(User user);
