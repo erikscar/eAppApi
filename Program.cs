@@ -1,6 +1,8 @@
 using eApp.Data;
-using eApp.Interfaces;
 using eApp.Repositories;
+using eApp.Repositories.Interfaces;
+using eApp.Services;
+using eApp.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<EAppContext>(options =>

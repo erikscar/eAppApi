@@ -1,7 +1,6 @@
 using eApp.Data;
-using eApp.Interfaces;
 using eApp.Models;
-using eApp.Models.DTOs;
+using eApp.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace eApp.Repositories;
@@ -15,46 +14,31 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public async Task CreateUserAsync(User user)
+    public async Task<ICollection<User>> GetAllAsync()
     {
-        await _context.AddAsync(user);
+        return await _context.Users.ToListAsync();
     }
 
-    public async Task<bool> DeleteUserAsync(int userId)
+    public async Task<User?> GetByIdAsync(int userId)
     {
-        var user = await _context.Users.FindAsync(userId);
-
-        if(user != null)
-        {
-            _context.Users.Remove(user);
-            return true;
-        }
-
-        return false;
+        return await _context.Users.FindAsync(userId);
     }
 
-    public async Task<ICollection<UserDTO>> GetAllUsersAsync()
+    public async Task CreateAsync(User user)
     {
-        return await _context.Users
-            .Select(u => new UserDTO { Id = u.Id, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email })
-            .ToListAsync();
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
     }
-
-    public async Task<UserDTO?> GetUserByIdAsync(int userId)
+    public async Task UpdateAsync(User user)
     {
-        return await _context.Users
-            .Where(u => u.Id == userId)
-            .Select(u => new UserDTO { Id = u.Id, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email })
-            .FirstOrDefaultAsync();
-    }
-
-    public async Task SaveAsync()
-    {
+        _context.Entry(user).State = EntityState.Modified;
         await _context.SaveChangesAsync();
     }
 
-    public void UpdateUser(User user)
+    public async Task DeleteAsync(int userId)
     {
-        _context.Entry(user).State = EntityState.Modified;
+        User userToDelete = await _context.Users.FindAsync(userId);
+        _context.Users.Remove(userToDelete);
+        await _context.SaveChangesAsync();
     }
 }

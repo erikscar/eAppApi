@@ -1,13 +1,12 @@
 using eApp.Models;
-using eApp.Models.DTOs;
 
-namespace eApp.Interfaces;
+namespace eApp.Repositories.Interfaces;
 
-public interface IUserRepository {
-    Task<ICollection<UserDTO>> GetAllUsersAsync();
-    Task<UserDTO?> GetUserByIdAsync(int userId);
-    Task CreateUserAsync(User user);
-    void UpdateUser(User user);
-    Task<bool> DeleteUserAsync(int userId);
-    Task SaveAsync();
+public interface IUserRepository
+{
+    Task<ICollection<User>> GetAllAsync();
+    Task<User?> GetByIdAsync(int userId);
+    Task CreateAsync(User user);
+    Task UpdateAsync(User user);
+    Task DeleteAsync(int userId);
 }
