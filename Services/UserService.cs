@@ -37,24 +37,28 @@ public class UserService : IUserService
         return user;
     }
 
-    public async Task LoginUserAsync(User user)
+    public async Task<User> LoginUserAsync(User user)
     {
         var userToLogin = await _userRepository.GetByEmailAsync(user.Email);
 
-        if (user == null || userToLogin.PasswordHash != user.PasswordHash)
+        if (userToLogin == null || userToLogin.PasswordHash != user.PasswordHash)
         {
             throw new UnauthorizedAccessException("Credenciais Inválidas");
         }
+
+        return userToLogin;
     }
 
-    public async Task CreateUserAsync(User user)
+    public async Task<User> CreateUserAsync(User user)
     {
         if (user == null)
         {
             throw new ArgumentNullException(nameof(user), "Usuário Inválido");
         }
 
-        await _userRepository.CreateAsync(user);
+        var userToCreate = await _userRepository.CreateAsync(user);
+
+        return userToCreate;
     }
 
     public async Task UpdateUserAsync(User user, int userId)

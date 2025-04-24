@@ -1,5 +1,7 @@
 using eApp.Models;
+using eApp.Services;
 using eApp.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eApp.Controllers;
@@ -9,13 +11,16 @@ namespace eApp.Controllers;
 public class UserController : Controller
 {
     private readonly IUserService _userService;
+    private readonly TokenService _tokenService;
 
-    public UserController(IUserService userService)
+    public UserController(IUserService userService, TokenService tokenService)
     {
         _userService = userService;
+        _tokenService = tokenService;
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
         try
@@ -46,8 +51,9 @@ public class UserController : Controller
     {
         try
         {
-            await _userService.CreateUserAsync(user);
-            return Ok(new { message = "Usuário Cadastrado" });
+            var userToCreate = await _userService.CreateUserAsync(user);
+            var token = _tokenService.GenerateJwtToken(userToCreate.Id);
+            return Ok(new { token });
         }
         catch (ArgumentNullException e)
         {
@@ -60,8 +66,9 @@ public class UserController : Controller
     {
         try
         {
-            await _userService.LoginUserAsync(user);
-            return Ok("Login Realizado com Sucesso");
+            var userToLogin = await _userService.LoginUserAsync(user);
+            var token = _tokenService.GenerateJwtToken(userToLogin.Id);
+            return Ok(new { token });
         }
         catch (UnauthorizedAccessException e)
         {

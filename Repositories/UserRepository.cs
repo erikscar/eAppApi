@@ -29,10 +29,12 @@ public class UserRepository : IUserRepository
         return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
 
-    public async Task CreateAsync(User user)
+    public async Task<User?> CreateAsync(User user)
     {
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
+
+        return user;
     }
 
     public async Task UpdateAsync(User user)
