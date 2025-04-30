@@ -3,6 +3,7 @@ using eApp.Services;
 using eApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace eApp.Controllers;
 
@@ -20,7 +21,6 @@ public class UserController : Controller
     }
 
     [HttpGet]
-    [Authorize]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
         try
@@ -33,12 +33,14 @@ public class UserController : Controller
         }
     }
 
-    [HttpGet("{userId}")]
-    public async Task<ActionResult<User>> GetUserById(int userId)
+    [HttpGet("profile")]
+    [Authorize]
+    public async Task<ActionResult<User>> GetUserById()
     {
         try
         {
-            return Ok(await _userService.GetUserDetailsAsync(userId));
+            var userId = User.FindFirst("id")?.Value;
+            return Ok(await _userService.GetUserDetailsAsync(int.Parse(userId)));
         }
         catch (KeyNotFoundException e)
         {

@@ -37,32 +37,6 @@
   },
   {
     "ContainingType": "eApp.Controllers.UserController",
-    "Method": "GetUserById",
-    "RelativePath": "api/User/{userId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "eApp.Models.User",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "eApp.Controllers.UserController",
     "Method": "PutUser",
     "RelativePath": "api/User/{userId}",
     "HttpMethod": "PUT",
@@ -113,5 +87,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eApp.Controllers.UserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/User/profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "eApp.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
