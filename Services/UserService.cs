@@ -73,6 +73,7 @@ public class UserService : IUserService
         userToUpdate.FirstName = user.FirstName;
         userToUpdate.LastName = user.LastName;
         userToUpdate.Email = user.Email;
+        userToUpdate.PasswordHash = user.PasswordHash;
 
         await _userRepository.UpdateAsync(userToUpdate);
     }

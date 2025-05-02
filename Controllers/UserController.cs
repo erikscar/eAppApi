@@ -78,13 +78,15 @@ public class UserController : Controller
         }
     }
 
-    [HttpPut("{userId}")]
-    public async Task<ActionResult> PutUser(User user, int userId)
+    [HttpPut]
+    [Authorize]
+    public async Task<ActionResult> PutUser(User user)
     {
         try
         {
-            await _userService.UpdateUserAsync(user, userId);
-            return Ok("Usuário Atualizado");
+            var userId = User.FindFirst("id")?.Value;
+            await _userService.UpdateUserAsync(user, int.Parse(userId));
+            return Ok(new { message = "Usuário Atualizado" });
         }
         catch (KeyNotFoundException e)
         {

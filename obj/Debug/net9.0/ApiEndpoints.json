@@ -38,7 +38,7 @@
   {
     "ContainingType": "eApp.Controllers.UserController",
     "Method": "PutUser",
-    "RelativePath": "api/User/{userId}",
+    "RelativePath": "api/User",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -46,11 +46,6 @@
       {
         "Name": "user",
         "Type": "eApp.Models.User",
-        "IsRequired": true
-      },
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
