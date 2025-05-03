@@ -3,20 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250503235024_AddAddressModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250503235024_AddAddressModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\data\\mappings\\usermap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:data\\mappings\\usermap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\data\\mappings\\addressmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:data\\mappings\\addressmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\data\\mappings\\categorymap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:data\\mappings\\categorymap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\data\\mappings\\cartmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:data\\mappings\\cartmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\data\\mappings\\basemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:data\\mappings\\basemap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\data\\mappings\\productmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:data\\mappings\\productmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\data\\eappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:data\\eappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250502155426_AddPhoneInUserModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250502155426_AddPhoneInUserModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,6 +73,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\migrations\\20250502155426_addphoneinusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:migrations\\20250502155426_addphoneinusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,11 +86,141 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "20250503235024_AddAddressModel.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250503235024_AddAddressModel.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250503235024_AddAddressModel.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250503235024_AddAddressModel.cs",
+              "RelativeToolTip": "Migrations\\20250503235024_AddAddressModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:50:25.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoryMap.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\CategoryMap.cs",
+              "RelativeDocumentMoniker": "Data\\Mappings\\CategoryMap.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\CategoryMap.cs",
+              "RelativeToolTip": "Data\\Mappings\\CategoryMap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:42:13.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BaseMap.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\BaseMap.cs",
+              "RelativeDocumentMoniker": "Data\\Mappings\\BaseMap.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\BaseMap.cs",
+              "RelativeToolTip": "Data\\Mappings\\BaseMap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:39:32.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartMap.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\CartMap.cs",
+              "RelativeDocumentMoniker": "Data\\Mappings\\CartMap.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\CartMap.cs",
+              "RelativeToolTip": "Data\\Mappings\\CartMap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:39:31.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AddressMap.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\AddressMap.cs",
+              "RelativeDocumentMoniker": "Data\\Mappings\\AddressMap.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\AddressMap.cs",
+              "RelativeToolTip": "Data\\Mappings\\AddressMap.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:39:19.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\Address.cs",
+              "RelativeDocumentMoniker": "Models\\Address.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\Address.cs",
+              "RelativeToolTip": "Models\\Address.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:34:30.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EAppContext.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\EAppContext.cs",
+              "RelativeDocumentMoniker": "Data\\EAppContext.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\EAppContext.cs",
+              "RelativeToolTip": "Data\\EAppContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:38:23.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\Cart.cs",
+              "RelativeToolTip": "Models\\Cart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:35:22.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductMap.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\ProductMap.cs",
+              "RelativeDocumentMoniker": "Data\\Mappings\\ProductMap.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\ProductMap.cs",
+              "RelativeToolTip": "Data\\Mappings\\ProductMap.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:34:04.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserMap.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\UserMap.cs",
+              "RelativeDocumentMoniker": "Data\\Mappings\\UserMap.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\UserMap.cs",
+              "RelativeToolTip": "Data\\Mappings\\UserMap.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T23:33:57.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "20250502155426_AddPhoneInUserModel.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250502155426_AddPhoneInUserModel.cs",
               "RelativeDocumentMoniker": "Migrations\\20250502155426_AddPhoneInUserModel.cs",
@@ -58,25 +228,24 @@
               "RelativeToolTip": "Migrations\\20250502155426_AddPhoneInUserModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T15:54:26.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T15:54:26.804Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T14:56:46.661Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
@@ -88,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
@@ -96,25 +265,24 @@
               "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T14:25:41.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T14:25:41.797Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\UserService.cs",
               "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\UserService.cs",
               "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwEsAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAcwE8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T14:21:05.814Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -122,12 +290,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-28T17:34:47.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-28T17:34:47.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -135,12 +302,11 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAAEUAAAAAAAAAAAAwwE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T17:07:06.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T17:07:06.4Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\TokenService.cs",
@@ -152,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
