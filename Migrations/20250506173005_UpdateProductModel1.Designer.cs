@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eApp.Data;
 
@@ -11,9 +12,11 @@ using eApp.Data;
 namespace eApp.Migrations
 {
     [DbContext(typeof(EAppContext))]
-    partial class EAppContextModelSnapshot : ModelSnapshot
+    [Migration("20250506173005_UpdateProductModel1")]
+    partial class UpdateProductModel1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -169,10 +172,6 @@ namespace eApp.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("VARCHAR(255)");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

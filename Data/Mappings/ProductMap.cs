@@ -23,8 +23,11 @@ public class ProductMap : BaseMap<Product>
         .IsRequired()
         .HasPrecision(7, 2);
 
-        builder.Property(product => product.StockQuantity)
-        .IsRequired();
+        builder.Property(product => product.Offer)
+        .HasDefaultValue(0);
+
+        builder.Property(product => product.ReviewsNumber)
+        .HasDefaultValue(0);    
 
         builder.Property(product => product.CategoryId)
         .IsRequired();

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eApp.Data;
 
@@ -11,9 +12,11 @@ using eApp.Data;
 namespace eApp.Migrations
 {
     [DbContext(typeof(EAppContext))]
-    partial class EAppContextModelSnapshot : ModelSnapshot
+    [Migration("20250506172700_UpdateProductModel")]
+    partial class UpdateProductModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -170,18 +173,12 @@ namespace eApp.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(255)");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
                     b.Property<int>("Offer")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(0);
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasPrecision(7, 2)
@@ -200,7 +197,10 @@ namespace eApp.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", t =>
+                        {
+                            t.HasCheckConstraint("CK_Product_Offer_Range", "[Offer] >= 1 AND [Offer] <=100");
+                        });
                 });
 
             modelBuilder.Entity("eApp.Models.User", b =>
