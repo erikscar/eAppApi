@@ -34,4 +34,9 @@ public class CartService : ICartService
     {
         await _cartRepository.RemoveProductAsync(userId, productId);
     }
+
+    public async Task CreateCartForUser(int userId)
+    {
+        await _cartRepository.CreateCartAsync(userId);
+    }
 }

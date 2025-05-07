@@ -7,10 +7,11 @@ namespace eApp.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
-
-    public UserService(IUserRepository userRepository)
+    private readonly ICartService _cartService;
+    public UserService(IUserRepository userRepository, ICartService cartService)
     {
         _userRepository = userRepository;
+        _cartService = cartService;
     }
 
     public async Task<ICollection<User>> GetAllUsersAsync()
@@ -57,7 +58,7 @@ public class UserService : IUserService
         }
 
         var userToCreate = await _userRepository.CreateAsync(user);
-
+        await _cartService.CreateCartForUser(user.Id);
         return userToCreate;
     }
 

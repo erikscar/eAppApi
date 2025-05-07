@@ -39,4 +39,12 @@ public class CartRepository : ICartRepository
         await _context.SaveChangesAsync();
 
     }
+
+    public async Task CreateCartAsync(int userId)
+    {
+        var cart = new Cart{UserId = userId, Products = new List<Product>() };
+
+        await _context.Carts.AddAsync(cart);
+        await _context.SaveChangesAsync();
+    }
 }

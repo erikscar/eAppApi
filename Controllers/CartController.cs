@@ -1,6 +1,7 @@
 using eApp.Models;
 using eApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace eApp.Controllers;
 
@@ -32,7 +33,8 @@ public class CartController : Controller
     }
 
     [HttpPost("add")]
-    public async Task<ActionResult> AddProduct(int productId)
+    [Authorize]
+    public async Task<ActionResult> AddProduct([FromBody] int productId)
     {
         var userId = User.FindFirst("id")?.Value;
         await _cartService.AddProductToCartAsync(int.Parse(userId), productId);
