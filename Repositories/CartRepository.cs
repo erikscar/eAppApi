@@ -32,7 +32,7 @@ public class CartRepository : ICartRepository
     public async Task RemoveProductAsync(int userId, int productId)
     {
         var cart = await GetCartByUserIdAsync(userId);
-        var product = await _context.Products.FindAsync(productId);
+        var product = cart.Products.FirstOrDefault(p => p.Id == productId);
 
         cart.Products.Remove(product);
 

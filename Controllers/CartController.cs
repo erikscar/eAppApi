@@ -43,7 +43,8 @@ public class CartController : Controller
     }
 
     [HttpPost("remove")]
-    public async Task<ActionResult> RemoveProduct(int productId)
+    [Authorize]
+    public async Task<ActionResult> RemoveProduct([FromBody] int productId)
     {
         var userId = User.FindFirst("id")?.Value;
         await _cartService.RemoveProductFromCartAsync(int.Parse(userId), productId);
