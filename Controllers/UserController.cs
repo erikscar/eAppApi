@@ -12,12 +12,14 @@ namespace eApp.Controllers;
 public class UserController : Controller
 {
     private readonly IUserService _userService;
+    private readonly ICartService _cartService;
     private readonly TokenService _tokenService;
 
-    public UserController(IUserService userService, TokenService tokenService)
+    public UserController(IUserService userService, ICartService cartService, TokenService tokenService)
     {
         _userService = userService;
         _tokenService = tokenService;
+        _cartService = cartService;
     }
 
     [HttpGet]

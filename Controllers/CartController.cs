@@ -17,6 +17,7 @@ public class CartController : Controller
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<ActionResult<Cart>> GetCart()
     {
         try
