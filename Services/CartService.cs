@@ -22,11 +22,14 @@ public class CartService : ICartService
             throw new KeyNotFoundException("Nenhum Carrinho Encontrado");
         }
 
+        cart.TotalPrice = cart.CartItems.Sum(item => item.Product.Price * item.Quantity);
+
         return cart;
     }
 
     public async Task AddProductToCartAsync(int userId, int productId)
     {
+
         await _cartRepository.AddProductAsync(userId, productId);
     }
 

@@ -16,15 +16,18 @@ public class CartRepository : ICartRepository
     }
     public async Task<Cart> GetCartByUserIdAsync(int userId)
     {
-        return await _context.Carts.Include(cart => cart.Products).FirstOrDefaultAsync(cart => cart.UserId == userId);
+        return await _context.Carts.
+        Include(cart => cart.CartItems)
+        .ThenInclude(cartItem => cartItem.Product)
+        .FirstOrDefaultAsync(cart => cart.UserId == userId);
     }
 
     public async Task AddProductAsync(int userId, int productId)
     {
         var cart = await GetCartByUserIdAsync(userId);
-        var product = await _context.Products.FindAsync(productId);
+        var cartItem = new CartItem { ProductId = productId, CartId = cart.Id };
 
-        cart.Products.Add(product);
+        cart.CartItems.Add(cartItem);
 
         await _context.SaveChangesAsync();
     }
@@ -32,19 +35,19 @@ public class CartRepository : ICartRepository
     public async Task RemoveProductAsync(int userId, int productId)
     {
         var cart = await GetCartByUserIdAsync(userId);
-        var product = cart.Products.FirstOrDefault(p => p.Id == productId);
+        var product = cart.CartItems.FirstOrDefault(p => p.Id == productId);
 
-        cart.Products.Remove(product);
+        cart.CartItems.Remove(product);
 
         await _context.SaveChangesAsync();
-
     }
 
     public async Task CreateCartAsync(int userId)
     {
-        var cart = new Cart{ UserId = userId, Products = new List<Product>() };
+        var cart = new Cart { UserId = userId, CartItems = new List<CartItem>() };
 
         await _context.Carts.AddAsync(cart);
         await _context.SaveChangesAsync();
     }
+
 }

@@ -8,7 +8,7 @@ public class Product : EntityBase
     public string ImageUrl { get; set; }
     public int ReviewsNumber { get; set; }
     public int Offer { get; set; }
-    public virtual ICollection<Cart>? Carts { get; set; }
+    public virtual ICollection<CartItem>? CartItems { get; set; }
     public int CategoryId { get; set; }
     public virtual Category? Category { get; set; }
 }

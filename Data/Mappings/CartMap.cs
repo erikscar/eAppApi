@@ -16,8 +16,5 @@ public class CartMap : BaseMap<Cart>
         builder.Property(cart => cart.UserId)
         .IsRequired();
 
-        builder.HasMany(cart => cart.Products)
-        .WithMany(product => product.Carts)
-        .UsingEntity(x => x.ToTable("Cart_Product"));
     }
 }
