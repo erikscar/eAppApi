@@ -35,9 +35,5 @@ public class UserMap : BaseMap<User>
         .HasForeignKey<Cart>(cart => cart.UserId)
         .IsRequired();
 
-        builder.HasMany(user => user.Addresses)
-        .WithOne(address => address.User)
-        .HasForeignKey(address => address.UserId)
-        .IsRequired();
     }
 }

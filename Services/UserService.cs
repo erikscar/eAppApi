@@ -8,10 +8,12 @@ public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
     private readonly ICartService _cartService;
-    public UserService(IUserRepository userRepository, ICartService cartService)
+    private readonly IAddressService _addressService;
+    public UserService(IUserRepository userRepository, ICartService cartService, IAddressService addressService)
     {
         _userRepository = userRepository;
         _cartService = cartService;
+        _addressService = addressService;
     }
 
     public async Task<ICollection<User>> GetAllUsersAsync()
@@ -59,6 +61,7 @@ public class UserService : IUserService
 
         var userToCreate = await _userRepository.CreateAsync(user);
         await _cartService.CreateCartForUser(user.Id);
+        await _addressService.CreateAddressForUser(user.Id);
         return userToCreate;
     }
 
@@ -77,7 +80,7 @@ public class UserService : IUserService
         userToUpdate.Phone = user.Phone;
         userToUpdate.ImageUrl = user.ImageUrl;
 
-        if(!string.IsNullOrWhiteSpace(user.PasswordHash))
+        if (!string.IsNullOrWhiteSpace(user.PasswordHash))
         {
             userToUpdate.PasswordHash = user.PasswordHash;
         }

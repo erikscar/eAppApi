@@ -9,6 +9,6 @@ public class User : EntityBase
     public string? Email { get; set; }
     public string? PasswordHash { get; set; }
     public virtual Cart? Cart { get; set; }
-    public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
+    public virtual Address? Address { get; set; }
 
 }

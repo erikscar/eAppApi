@@ -7,8 +7,7 @@
         public string? Complement { get; set; }
         public string? Neighborhood { get; set; }
         public string? City { get; set; }
-        public string? PostalCode  { get; set; }
-
+        public string? PostalCode { get; set; }
         public int UserId { get; set; }
         public virtual User? User { get; set; }
     }

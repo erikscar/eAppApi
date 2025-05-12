@@ -28,7 +28,10 @@ namespace eApp.Data.Mappings
             builder.Property(address => address.PostalCode)
             .HasColumnType("VARCHAR(20)");
 
-
+            builder.HasOne(address => address.User)
+            .WithOne(user => user.Address)
+            .HasForeignKey<Address>(address => address.UserId)
+            .IsRequired();
         }
     }
 }
