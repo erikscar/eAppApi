@@ -74,6 +74,8 @@ public class UserService : IUserService
         userToUpdate.FirstName = user.FirstName;
         userToUpdate.LastName = user.LastName;
         userToUpdate.Email = user.Email;
+        userToUpdate.Phone = user.Phone;
+        userToUpdate.ImageUrl = user.ImageUrl;
 
         if(!string.IsNullOrWhiteSpace(user.PasswordHash))
         {

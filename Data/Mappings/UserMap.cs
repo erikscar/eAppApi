@@ -20,6 +20,12 @@ public class UserMap : BaseMap<User>
         .IsRequired()
         .HasColumnType("VARCHAR(100)");
 
+         builder.Property(user => user.Phone)
+        .HasColumnType("VARCHAR(50)");
+
+        builder.Property(user => user.ImageUrl)
+        .HasColumnType("VARCHAR(255)");
+
         builder.Property(user => user.PasswordHash)
         .IsRequired()
         .HasColumnType("VARCHAR(255)");

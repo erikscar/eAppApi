@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eApp.Data;
 
@@ -11,9 +12,11 @@ using eApp.Data;
 namespace eApp.Migrations
 {
     [DbContext(typeof(EAppContext))]
-    partial class EAppContextModelSnapshot : ModelSnapshot
+    [Migration("20250512145547_AddImageUrlAndPhoneInUserModel")]
+    partial class AddImageUrlAndPhoneInUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -224,6 +227,7 @@ namespace eApp.Migrations
                         .HasColumnType("VARCHAR(100)");
 
                     b.Property<string>("ImageUrl")
+                        .IsRequired()
                         .HasColumnType("VARCHAR(255)");
 
                     b.Property<string>("LastName")
@@ -234,6 +238,7 @@ namespace eApp.Migrations
                         .HasColumnType("VARCHAR(255)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("VARCHAR(50)");
 
                     b.Property<DateTime>("UpdatedAt")
