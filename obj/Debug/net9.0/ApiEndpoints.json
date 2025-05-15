@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "eApp.Controllers.AddressController",
+    "Method": "GetAddress",
+    "RelativePath": "api/Address",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eApp.Controllers.AddressController",
+    "Method": "UpdateAddress",
+    "RelativePath": "api/Address",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "address",
+        "Type": "eApp.Models.Address",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "eApp.Controllers.CartController",
     "Method": "GetCart",
     "RelativePath": "api/Cart",

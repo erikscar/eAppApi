@@ -5251,11 +5251,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eriks\\Desktop\\eAppApi\\eApp.csproj",
+      "projectUniqueName": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\eApp.csproj",
       "projectName": "eApp",
-      "projectPath": "C:\\Users\\eriks\\Desktop\\eAppApi\\eApp.csproj",
+      "projectPath": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\eApp.csproj",
       "packagesPath": "C:\\Users\\eriks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eriks\\Desktop\\eAppApi\\obj\\",
+      "outputPath": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
