@@ -26,6 +26,11 @@ public class AddressService : IAddressService
     {
         var addressToUpdate = await GetAddressByUser(userId);
 
+        if(addressToUpdate == null)
+        {
+            throw new KeyNotFoundException("Endereço Não Encontrado");
+        }
+
         addressToUpdate.Street = address.Street;
         addressToUpdate.Number = address.Number;
         addressToUpdate.Complement = address.Complement;

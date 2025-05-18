@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\services\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:services\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|solutionrelative:repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A88F44B2-F44B-2181-1ED5-40DC12C6BB7E}|eApp.csproj|c:\\users\\eriks\\onedrive\\desktop\\eappapi\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -142,11 +146,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "AddressService.cs",
+              "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\AddressService.cs",
+              "RelativeDocumentMoniker": "Services\\AddressService.cs",
+              "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\AddressService.cs",
+              "RelativeToolTip": "Services\\AddressService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwB4AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T02:05:16.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Models\\Category.cs",
@@ -154,25 +171,24 @@
               "RelativeToolTip": "Models\\Category.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T14:57:14.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T14:57:14.684Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CartRepository.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\CartRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\CartRepository.cs",
               "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\CartRepository.cs",
               "RelativeToolTip": "Repositories\\CartRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T14:47:28.012Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "Controllers\\CartController.cs",
@@ -180,8 +196,7 @@
               "RelativeToolTip": "Controllers\\CartController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T14:39:54.401Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-09T14:39:54.401Z"
             },
             {
               "$type": "Document",
@@ -191,14 +206,14 @@
               "RelativeDocumentMoniker": "Services\\CartService.cs",
               "ToolTip": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\CartService.cs",
               "RelativeToolTip": "Services\\CartService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-09T14:39:48.543Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "Services\\ProductService.cs",
@@ -210,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\Interfaces\\IProductRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProductRepository.cs",
@@ -222,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -230,12 +245,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-28T17:34:47.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-28T17:34:47.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -247,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -259,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Cart.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "Models\\Cart.cs",
@@ -271,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Models\\Product.cs",
@@ -283,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CartMap.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\CartMap.cs",
               "RelativeDocumentMoniker": "Data\\Mappings\\CartMap.cs",
@@ -295,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\ProductRepository.cs",
@@ -307,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
@@ -319,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "20250506173357_AddImageUrlProduct.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250506173357_AddImageUrlProduct.cs",
               "RelativeDocumentMoniker": "Migrations\\20250506173357_AddImageUrlProduct.cs",
@@ -331,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Services\\UserService.cs",
@@ -343,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "20250506173005_UpdateProductModel1.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250506173005_UpdateProductModel1.cs",
               "RelativeDocumentMoniker": "Migrations\\20250506173005_UpdateProductModel1.cs",
@@ -355,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ProductMap.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\ProductMap.cs",
               "RelativeDocumentMoniker": "Data\\Mappings\\ProductMap.cs",
@@ -367,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "20250506172700_UpdateProductModel.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250506172700_UpdateProductModel.cs",
               "RelativeDocumentMoniker": "Migrations\\20250506172700_UpdateProductModel.cs",
@@ -379,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
@@ -391,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "IProductService.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\Interfaces\\IProductService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IProductService.cs",
@@ -403,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\TokenService.cs",
@@ -415,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Services\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
@@ -427,7 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Repositories\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository.cs",
@@ -439,7 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "20250503235024_AddAddressModel.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250503235024_AddAddressModel.cs",
               "RelativeDocumentMoniker": "Migrations\\20250503235024_AddAddressModel.cs",
@@ -451,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "EAppContext.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\EAppContext.cs",
               "RelativeDocumentMoniker": "Data\\EAppContext.cs",
@@ -463,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Address.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\Address.cs",
               "RelativeDocumentMoniker": "Models\\Address.cs",
@@ -475,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "AddressMap.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\AddressMap.cs",
               "RelativeDocumentMoniker": "Data\\Mappings\\AddressMap.cs",
@@ -487,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "BaseMap.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\BaseMap.cs",
               "RelativeDocumentMoniker": "Data\\Mappings\\BaseMap.cs",
@@ -499,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "CategoryMap.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\CategoryMap.cs",
               "RelativeDocumentMoniker": "Data\\Mappings\\CategoryMap.cs",
@@ -511,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "UserMap.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Data\\Mappings\\UserMap.cs",
               "RelativeDocumentMoniker": "Data\\Mappings\\UserMap.cs",
@@ -523,7 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "20250502155426_AddPhoneInUserModel.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Migrations\\20250502155426_AddPhoneInUserModel.cs",
               "RelativeDocumentMoniker": "Migrations\\20250502155426_AddPhoneInUserModel.cs",
@@ -535,7 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\eriks\\OneDrive\\Desktop\\eAppApi\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
