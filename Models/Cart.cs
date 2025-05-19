@@ -4,7 +4,6 @@ namespace eApp.Models;
 
 public class Cart : EntityBase
 {
-    [NotMapped]
     public decimal TotalPrice { get; set; }
     public int Quantity { get; set; }
     public decimal Price { get; set; }

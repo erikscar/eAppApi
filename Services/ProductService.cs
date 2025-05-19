@@ -22,5 +22,11 @@ namespace eApp.Services
 
             return products;
         }
+
+        public async Task<Product> GetProductByIdAsync(int productId)
+        {
+            return await _productRepository.GetProductById(productId);
+        }
+
     }
 }

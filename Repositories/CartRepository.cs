@@ -14,22 +14,13 @@ public class CartRepository : ICartRepository
     {
         _context = context;
     }
+
     public async Task<Cart> GetCartByUserIdAsync(int userId)
     {
-        return await _context.Carts.
-        Include(cart => cart.CartItems)
-        .ThenInclude(cartItem => cartItem.Product)
-        .FirstOrDefaultAsync(cart => cart.UserId == userId);
-    }
-
-    public async Task AddProductAsync(int userId, int productId)
-    {
-        var cart = await GetCartByUserIdAsync(userId);
-        var cartItem = new CartItem { ProductId = productId, CartId = cart.Id };
-
-        cart.CartItems.Add(cartItem);
-
-        await _context.SaveChangesAsync();
+        return await _context
+            .Carts.Include(cart => cart.CartItems)
+            .ThenInclude(cartItem => cartItem.Product)
+            .FirstOrDefaultAsync(cart => cart.UserId == userId);
     }
 
     public async Task RemoveProductAsync(int userId, int productId)
@@ -50,4 +41,9 @@ public class CartRepository : ICartRepository
         await _context.SaveChangesAsync();
     }
 
+    public async Task UpdateAsync(Cart cart)
+    {
+        _context.Carts.Update(cart);
+        await _context.SaveChangesAsync();
+    }
 }
