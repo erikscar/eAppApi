@@ -10,9 +10,6 @@ public class CartMap : BaseMap<Cart>
     {
         base.Configure(builder);
 
-        builder.Property(cart => cart.Price)
-        .HasPrecision(7, 2);
-
         builder.Property(cart => cart.UserId)
         .IsRequired();
 

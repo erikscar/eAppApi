@@ -24,8 +24,8 @@ public class CartController : Controller
         {
             var userId = User.FindFirst("id")?.Value;
             var cart = await _cartService.GetCartByUserIdAsync(int.Parse(userId));
-
-            return Ok(cart);
+            var cartSummary = _cartService.GetCartSummary(cart);
+            return Ok(cartSummary);
         }
         catch (KeyNotFoundException e)
         {

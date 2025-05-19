@@ -9,4 +9,5 @@ public class CartItem : EntityBase
     public virtual Product? Product { get; set; }
     public int Quantity { get; set; }
     public decimal Price { get; set; }
+    public int Offer { get; set; }
 }

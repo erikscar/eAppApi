@@ -1,3 +1,4 @@
+using System.Globalization;
 using eApp.Models;
 using eApp.Repositories.Interfaces;
 using eApp.Services.Interfaces;
@@ -71,6 +72,16 @@ public class CartService : ICartService
     public CartDTO GetCartSummary(Cart cart)
     {
         var total = cart.CartItems.Sum(cartItem => cartItem.Quantity * cartItem.Price);
-        var totalWithDiscount = cart.CartItems.Sum()
+        var totalWithDiscount = cart.CartItems.Sum(cartItem => cartItem.Price * (1 - (cartItem.Offer / 100m)) * cartItem.Quantity);
+        var totalDiscountAmount = total - totalWithDiscount;
+        var discountPercentageAmount = totalDiscountAmount / total * 100;
+        return new CartDTO
+        {
+            CartItems = cart.CartItems,
+            TotalBRL = total.ToString("C", new CultureInfo("pt-BR")),
+            TotalWithDiscountBRL = totalWithDiscount.ToString("C", new CultureInfo("pt-BR")),
+            TotalDiscountAmountBRL = totalDiscountAmount.ToString("C", new CultureInfo("pt-BR")),
+            DiscountPercentageAmount = discountPercentageAmount.ToString("F1"),
+        };
     }
 }
