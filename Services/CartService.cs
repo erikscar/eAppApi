@@ -59,10 +59,27 @@ public class CartService : ICartService
 
     public async Task RemoveProductFromCartAsync(int userId, int productId)
     {
-        await _cartRepository.RemoveProductAsync(userId, productId);
+        var cart = await _cartRepository.GetCartByUserIdAsync(userId);
+        if (cart == null)
+            throw new Exception("Carrinho não encontrado.");
+
+        var item = cart.CartItems.FirstOrDefault(i => i.ProductId == productId);
+        if (item == null)
+            return; // produto nem está no carrinho
+
+        if (item.Quantity > 1)
+        {
+            item.Quantity--; // regra de negócio: só decrementa
+        }
+        else
+        {
+            cart.CartItems.Remove(item); // regra de negócio: remove item
+        }
+
+        await _cartRepository.UpdateAsync(cart); // persistência
     }
 
-    
+
 
     public async Task CreateCartForUser(int userId)
     {
@@ -74,8 +91,15 @@ public class CartService : ICartService
         var total = cart.CartItems.Sum(cartItem => cartItem.Quantity * cartItem.Price);
         var totalWithDiscount = cart.CartItems.Sum(cartItem => cartItem.Price * (1 - (cartItem.Offer / 100m)) * cartItem.Quantity);
         var totalDiscountAmount = total - totalWithDiscount;
-        var discountPercentageAmount = totalDiscountAmount / total * 100;
-        return new CartDTO
+
+        decimal discountPercentageAmount = 0;
+        if(total > 0)
+        {
+            discountPercentageAmount = totalDiscountAmount / total * 100;
+        }
+
+
+        return new CartDTO 
         {
             CartItems = cart.CartItems,
             TotalBRL = total.ToString("C", new CultureInfo("pt-BR")),

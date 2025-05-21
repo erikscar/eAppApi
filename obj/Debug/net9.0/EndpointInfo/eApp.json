@@ -463,14 +463,6 @@
             "type": "number",
             "format": "double"
           },
-          "quantity": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "price": {
-            "type": "number",
-            "format": "double"
-          },
           "userId": {
             "type": "integer",
             "format": "int32"
@@ -524,6 +516,10 @@
           "price": {
             "type": "number",
             "format": "double"
+          },
+          "offer": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
