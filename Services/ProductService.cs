@@ -28,5 +28,9 @@ namespace eApp.Services
             return await _productRepository.GetProductById(productId);
         }
 
+        public async Task<ICollection<Product>> GetProductsBySearchValue(string value)
+        {
+            return await _productRepository.GetProductsBySearchValue(value);
+        }
     }
 }

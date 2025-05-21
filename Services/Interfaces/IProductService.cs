@@ -6,5 +6,6 @@ namespace eApp.Services.Interfaces
     {
         Task<ICollection<Product>> GetAllProductsAsync();
         Task<Product> GetProductByIdAsync(int productId);
+        Task<ICollection<Product>> GetProductsBySearchValue(string value);
     }
 }

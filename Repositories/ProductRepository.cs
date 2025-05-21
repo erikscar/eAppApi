@@ -23,5 +23,15 @@ namespace eApp.Repositories
         {
             return await _context.Products.FindAsync(productId);
         }
+
+        public async Task<ICollection<Product>> GetProductsBySearchValue(string searchValue)
+        {
+            return await _context
+                .Products.Where(p =>
+                    p.Name.ToLower().Contains(searchValue.ToLower())
+                    || p.Description.ToLower().Contains(searchValue.ToLower())
+                )
+                .ToListAsync();
+        }
     }
 }

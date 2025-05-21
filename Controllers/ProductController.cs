@@ -27,5 +27,12 @@ namespace eApp.Controllers
                 return NotFound(e.Message);
             }
         }
+
+        [HttpGet("search")]
+        public async Task<ActionResult<ICollection<Product>>> GetProductsBySearchValue([FromQuery] string searchValue)
+        {
+            var products = await _productService.GetProductsBySearchValue(searchValue);
+            return Ok(products);
+        }
     }
 }
