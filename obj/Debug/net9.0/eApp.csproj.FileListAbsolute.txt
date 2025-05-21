@@ -447,3 +447,9 @@ C:\Users\eriks\Desktop\eAppApi\obj\Debug\net9.0\eApp.genruntimeconfig.cache
 C:\Users\eriks\Desktop\eAppApi\obj\Debug\net9.0\ref\eApp.dll
 C:\Users\eriks\OneDrive\Desktop\eAppApi\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\eriks\Desktop\eAppApi\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\eriks\Desktop\eAppApi\bin\Debug\net9.0\eapp\angular.json
+C:\Users\eriks\Desktop\eAppApi\bin\Debug\net9.0\eapp\package-lock.json
+C:\Users\eriks\Desktop\eAppApi\bin\Debug\net9.0\eapp\package.json
+C:\Users\eriks\Desktop\eAppApi\bin\Debug\net9.0\eapp\tsconfig.app.json
+C:\Users\eriks\Desktop\eAppApi\bin\Debug\net9.0\eapp\tsconfig.json
+C:\Users\eriks\Desktop\eAppApi\bin\Debug\net9.0\eapp\tsconfig.spec.json

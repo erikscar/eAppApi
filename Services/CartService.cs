@@ -61,22 +61,19 @@ public class CartService : ICartService
     {
         var cart = await _cartRepository.GetCartByUserIdAsync(userId);
         if (cart == null)
-            throw new Exception("Carrinho não encontrado.");
+            throw new Exception("Carrinho nï¿½o encontrado.");
 
-        var item = cart.CartItems.FirstOrDefault(i => i.ProductId == productId);
-        if (item == null)
-            return; // produto nem está no carrinho
-
+        var item = cart.CartItems.FirstOrDefault(i => i.Id == productId);
+        
         if (item.Quantity > 1)
         {
-            item.Quantity--; // regra de negócio: só decrementa
+            item.Quantity--; 
+            await _cartRepository.UpdateAsync(cart);
         }
         else
         {
-            cart.CartItems.Remove(item); // regra de negócio: remove item
+            await _cartRepository.RemoveProductAsync(userId, productId);
         }
-
-        await _cartRepository.UpdateAsync(cart); // persistência
     }
 
 
