@@ -32,11 +32,11 @@ public class CartService : ICartService
         var cart = await _cartRepository.GetCartByUserIdAsync(userId);
         var product = await _productService.GetProductByIdAsync(productId);
 
-        var itemExists = cart.CartItems.FirstOrDefault(cartItem => cartItem.ProductId == productId);
+        var item = cart.CartItems.FirstOrDefault(item => item.Id == productId);
 
-        if (itemExists != null)
+        if (item != null)
         {
-            itemExists.Quantity++;
+            item.Quantity++;
         }
         else
         {
@@ -53,7 +53,7 @@ public class CartService : ICartService
         }
 
         cart.TotalPrice = cart.CartItems.Sum(cartItem => cartItem.Quantity * cartItem.Price);
-    
+
         await _cartRepository.UpdateAsync(cart);
     }
 
@@ -61,13 +61,13 @@ public class CartService : ICartService
     {
         var cart = await _cartRepository.GetCartByUserIdAsync(userId);
         if (cart == null)
-            throw new Exception("Carrinho n�o encontrado.");
+            throw new Exception("Carrinho não encontrado.");
 
-        var item = cart.CartItems.FirstOrDefault(i => i.Id == productId);
-        
+        var item = cart.CartItems.FirstOrDefault(item => item.Id == productId);
+
         if (item.Quantity > 1)
         {
-            item.Quantity--; 
+            item.Quantity--;
             await _cartRepository.UpdateAsync(cart);
         }
         else
@@ -75,8 +75,6 @@ public class CartService : ICartService
             await _cartRepository.RemoveProductAsync(userId, productId);
         }
     }
-
-
 
     public async Task CreateCartForUser(int userId)
     {
@@ -86,17 +84,19 @@ public class CartService : ICartService
     public CartDTO GetCartSummary(Cart cart)
     {
         var total = cart.CartItems.Sum(cartItem => cartItem.Quantity * cartItem.Price);
-        var totalWithDiscount = cart.CartItems.Sum(cartItem => cartItem.Price * (1 - (cartItem.Offer / 100m)) * cartItem.Quantity);
+        var totalWithDiscount = cart.CartItems.Sum(cartItem =>
+            cartItem.Price * (1 - (cartItem.Offer / 100m)) * cartItem.Quantity
+        );
         var totalDiscountAmount = total - totalWithDiscount;
 
         decimal discountPercentageAmount = 0;
-        if(total > 0)
+
+        if (total > 0)
         {
             discountPercentageAmount = totalDiscountAmount / total * 100;
         }
 
-
-        return new CartDTO 
+        return new CartDTO
         {
             CartItems = cart.CartItems,
             TotalBRL = total.ToString("C", new CultureInfo("pt-BR")),
