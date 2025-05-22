@@ -6,6 +6,7 @@ namespace eApp.Repositories.Interfaces
     {
         Task<ICollection<Product>> GetAllAsync();
         Task<Product> GetProductById(int productId);
-        Task<ICollection<Product>> GetProductsBySearchValue(string searchValue);
+        Task<ICollection<Product>> GetProductsByFilterAsync(string searchValue, string category, string brand, string ratings);
+        IQueryable<Product> GetProductsQuery();
     }
 }

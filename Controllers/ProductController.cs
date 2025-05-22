@@ -28,10 +28,21 @@ namespace eApp.Controllers
             }
         }
 
+        //[HttpGet("search")]
+        //public async Task<ActionResult<ICollection<Product>>> GetProductsBySearchValue([FromQuery] string searchValue)
+        //{
+        //    var products = await _productService.GetProductsBySearchValue(searchValue);
+        //    return Ok(products);
+        //}
+
         [HttpGet("search")]
-        public async Task<ActionResult<ICollection<Product>>> GetProductsBySearchValue([FromQuery] string searchValue)
+        public async Task<ActionResult<ICollection<Product>>> SearchForProducts(
+            [FromQuery] string? searchValue,
+            [FromQuery] string? category,
+            [FromQuery] string? brand,
+            [FromQuery] string? rating)
         {
-            var products = await _productService.GetProductsBySearchValue(searchValue);
+            var products = await _productService.FilterProductsAsync(searchValue, category, brand, rating);
             return Ok(products);
         }
     }

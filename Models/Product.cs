@@ -6,6 +6,8 @@ public class Product : EntityBase
     public string? Description { get; set; }
     public decimal Price { get; set; }
     public string ImageUrl { get; set; }
+    public string Brand { get; set; }
+    public string Rating { get; set; }
     public int ReviewsNumber { get; set; }
     public int Offer { get; set; }
     public virtual ICollection<CartItem>? CartItems { get; set; }

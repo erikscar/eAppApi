@@ -24,7 +24,7 @@ namespace eApp.Repositories
             return await _context.Products.FindAsync(productId);
         }
 
-        public async Task<ICollection<Product>> GetProductsBySearchValue(string searchValue)
+        public async Task<ICollection<Product>> GetProductsByFilterAsync(string searchValue, string category, string brand, string ratings)
         {
             return await _context
                 .Products.Where(p =>
@@ -32,6 +32,11 @@ namespace eApp.Repositories
                     || p.Description.ToLower().Contains(searchValue.ToLower())
                 )
                 .ToListAsync();
+        }
+
+        public IQueryable<Product> GetProductsQuery()
+        {
+            return  _context.Products.AsQueryable();
         }
     }
 }
