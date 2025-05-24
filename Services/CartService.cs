@@ -32,7 +32,7 @@ public class CartService : ICartService
         var cart = await _cartRepository.GetCartByUserIdAsync(userId);
         var product = await _productService.GetProductByIdAsync(productId);
 
-        var item = cart.CartItems.FirstOrDefault(item => item.Id == productId);
+        var item = cart.CartItems.FirstOrDefault(item => item.ProductId == productId);
 
         if (item != null)
         {

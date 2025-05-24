@@ -28,21 +28,31 @@ namespace eApp.Controllers
             }
         }
 
-        //[HttpGet("search")]
-        //public async Task<ActionResult<ICollection<Product>>> GetProductsBySearchValue([FromQuery] string searchValue)
-        //{
-        //    var products = await _productService.GetProductsBySearchValue(searchValue);
-        //    return Ok(products);
-        //}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Product>> GetProductById(int id)
+        {
+           
+            try
+            {
+                return Ok(await _productService.GetProductByIdAsync(id));
+            }
+            catch (KeyNotFoundException e)
+            {
+                return NotFound(e.Message);
+            }
+        }
 
         [HttpGet("search")]
-        public async Task<ActionResult<ICollection<Product>>> SearchForProducts(
-            [FromQuery] string? searchValue,
-            [FromQuery] string? category,
-            [FromQuery] string? brand,
-            [FromQuery] string? rating)
+        public async Task<ActionResult<ICollection<Product>>> GetProductsBySearchValue([FromQuery] string searchValue)
         {
-            var products = await _productService.FilterProductsAsync(searchValue, category, brand, rating);
+           var products = await _productService.FilterProductsAsync(searchValue);
+            return Ok(products);
+        }
+
+        [HttpGet("category")]
+        public async Task<ActionResult<ICollection<Product>>> GetProductsByCategory([FromQuery] string category)
+        {
+            var products = await _productService.GetProductByCategory(category);
             return Ok(products);
         }
     }

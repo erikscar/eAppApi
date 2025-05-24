@@ -19,12 +19,17 @@ namespace eApp.Repositories
             return await _context.Products.ToListAsync();
         }
 
+        public async Task<ICollection<Product>> GetProductByCategory(string category)
+        {
+            return await _context.Products.Where(p => p.Category.Name == category).ToListAsync();
+        }
+
         public async Task<Product> GetProductById(int productId)
         {
             return await _context.Products.FindAsync(productId);
         }
 
-        public async Task<ICollection<Product>> GetProductsByFilterAsync(string searchValue, string category, string brand, string ratings)
+        public async Task<ICollection<Product>> GetProductsByFilterAsync(string searchValue)
         {
             return await _context
                 .Products.Where(p =>
@@ -34,9 +39,5 @@ namespace eApp.Repositories
                 .ToListAsync();
         }
 
-        public IQueryable<Product> GetProductsQuery()
-        {
-            return  _context.Products.AsQueryable();
-        }
     }
 }
