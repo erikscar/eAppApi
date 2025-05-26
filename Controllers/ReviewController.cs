@@ -27,7 +27,7 @@ namespace eApp.Controllers
         public async Task<ActionResult<Review>> CreateReviewAsync([FromBody] Review review, int productId)
         {
             await _reviewService.AddReviewAsync(productId, review);
-            return Ok("Review Adicionada com Sucesso");
+            return Ok(new { message = "Review Adicionada com Sucesso" });
         }
     }
 }
