@@ -16,7 +16,7 @@ namespace eApp.Repositories
 
         public async Task<ICollection<Product>> GetAllAsync()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Include(product => product.Reviews).ToListAsync();
         }
 
         public async Task<ICollection<Product>> GetProductByCategory(string category)
@@ -26,7 +26,7 @@ namespace eApp.Repositories
 
         public async Task<Product> GetProductById(int productId)
         {
-            return await _context.Products.FindAsync(productId);
+            return await _context.Products.Include(product => product.Reviews).FirstOrDefaultAsync(p => p.Id == productId);
         }
 
         public async Task<ICollection<Product>> GetProductsByFilterAsync(string searchValue)

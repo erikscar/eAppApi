@@ -26,9 +26,6 @@ public class ProductMap : BaseMap<Product>
         builder.Property(product => product.Offer)
         .HasDefaultValue(0);
 
-        builder.Property(product => product.ReviewsNumber)
-        .HasDefaultValue(0);    
-
         builder.Property(product => product.CategoryId)
         .IsRequired();
 

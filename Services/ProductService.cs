@@ -1,4 +1,5 @@
 ﻿using eApp.Models;
+using eApp.Models.DTOs;
 using eApp.Repositories.Interfaces;
 using eApp.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +14,7 @@ namespace eApp.Services
             _productRepository = productRepository;
         }
 
-        public async Task<ICollection<Product>> GetAllProductsAsync()
+        public async Task<ICollection<ProductDTO>> GetAllProductsAsync()
         {
             var products = await _productRepository.GetAllAsync();
 
@@ -22,12 +23,32 @@ namespace eApp.Services
                 throw new KeyNotFoundException("Nenhum Produto Encontrado");
             }
 
-            return products;
+            return products.Select(product => new ProductDTO
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                Offer = product.Offer,
+                ImageUrl = product.ImageUrl,
+                AverageRating = product.Reviews.Average(review => review.Rating) * 2
+            }).ToList();
         }
 
-        public async Task<Product> GetProductByIdAsync(int productId)
+        public async Task<ProductDTO> GetProductByIdAsync(int productId)
         {
-            return await _productRepository.GetProductById(productId);
+            var product = await _productRepository.GetProductById(productId);
+
+            return new ProductDTO
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                Offer = product.Offer,
+                ImageUrl = product.ImageUrl,
+                AverageRating = product.Reviews.Average(review => review.Rating) * 2
+            };
         }
 
         public async Task<ICollection<Product>> FilterProductsAsync(string searchValue)

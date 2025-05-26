@@ -1,4 +1,5 @@
 ﻿using eApp.Models;
+using eApp.Models.DTOs;
 using eApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ namespace eApp.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ICollection<Product>>> GetProducts()
+        public async Task<ActionResult<ICollection<ProductDTO>>> GetProducts()
         {
             try
             {
@@ -29,7 +30,7 @@ namespace eApp.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProductById(int id)
+        public async Task<ActionResult<ProductDTO>> GetProductById(int id)
         {
            
             try
