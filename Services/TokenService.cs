@@ -13,14 +13,14 @@ namespace eApp.Services
             _config = config;
         }
 
-        public string GenerateJwtToken(int userId)
+        public string GenerateJwtToken(int userId, string role)
         {
             var issuer = _config["Jwt:Issuer"];
             var audience = _config["Jwt:Audience"];
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var claims = new[] { new Claim("id", userId.ToString()) };
+            var claims = new[] { new Claim(ClaimTypes.NameIdentifier, userId.ToString()), new Claim(ClaimTypes.Role, role) };
 
             var token = new JwtSecurityToken(
                 issuer: issuer,

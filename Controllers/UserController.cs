@@ -22,7 +22,7 @@ public class UserController : Controller
         _cartService = cartService;
     }
 
-    [HttpGet]
+    [HttpGet("users")]
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
@@ -42,7 +42,7 @@ public class UserController : Controller
     {
         try
         {
-            var userId = User.FindFirst("id")?.Value;
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             return Ok(await _userService.GetUserDetailsAsync(int.Parse(userId)));
         }
         catch (KeyNotFoundException e)
@@ -57,7 +57,7 @@ public class UserController : Controller
         try
         {
             var userToCreate = await _userService.CreateUserAsync(user);
-            var token = _tokenService.GenerateJwtToken(userToCreate.Id);
+            var token = _tokenService.GenerateJwtToken(userToCreate.Id, userToCreate.Role);
             return Ok(new { token });
         }
         catch (ArgumentNullException e)
@@ -72,7 +72,7 @@ public class UserController : Controller
         try
         {
             var userToLogin = await _userService.LoginUserAsync(user);
-            var token = _tokenService.GenerateJwtToken(userToLogin.Id);
+            var token = _tokenService.GenerateJwtToken(userToLogin.Id, userToLogin.Role);
             return Ok(new { token });
         }
         catch (UnauthorizedAccessException e)
@@ -87,7 +87,7 @@ public class UserController : Controller
     {
         try
         {
-            var userId = User.FindFirst("id")?.Value;
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             await _userService.UpdateUserAsync(user, int.Parse(userId));
             return Ok(new { message = "Usuário Atualizado" });
         }
