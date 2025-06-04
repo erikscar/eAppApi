@@ -29,6 +29,19 @@ public class UserRepository : IUserRepository
         return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
 
+    public async Task<ICollection<User>> GetBySearchValue(string searchValue)
+    {
+        string  pattern = $"%{searchValue.Trim().ToLower()}%";
+        return await _context
+            .Users.Where(u =>
+                EF.Functions.Like(u.FirstName, pattern)
+                || EF.Functions.Like(u.LastName, pattern)
+                || EF.Functions.Like(u.Email, pattern)
+                || EF.Functions.Like(u.Phone, pattern)
+            )
+            .ToListAsync();
+    }
+
     public async Task<User?> CreateAsync(User user)
     {
         await _context.Users.AddAsync(user);

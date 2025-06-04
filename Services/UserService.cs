@@ -1,4 +1,5 @@
 using eApp.Models;
+using eApp.Repositories;
 using eApp.Repositories.Interfaces;
 using eApp.Services.Interfaces;
 
@@ -98,5 +99,10 @@ public class UserService : IUserService
         }
 
         await _userRepository.DeleteAsync(userId);
+    }
+
+    public async Task<ICollection<User>> GetUsersBySearchValue(string searchValue)
+    {
+       return await _userRepository.GetBySearchValue(searchValue);
     }
 }

@@ -1,9 +1,9 @@
+using System.Security.Claims;
 using eApp.Models;
 using eApp.Services;
 using eApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace eApp.Controllers;
 
@@ -15,7 +15,11 @@ public class UserController : Controller
     private readonly ICartService _cartService;
     private readonly TokenService _tokenService;
 
-    public UserController(IUserService userService, ICartService cartService, TokenService tokenService)
+    public UserController(
+        IUserService userService,
+        ICartService cartService,
+        TokenService tokenService
+    )
     {
         _userService = userService;
         _tokenService = tokenService;
@@ -48,6 +52,27 @@ public class UserController : Controller
         catch (KeyNotFoundException e)
         {
             return NotFound(e.Message);
+        }
+    }
+
+    [HttpGet("search")]
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult<ICollection<User>>> GetUsersBySearchValue(
+        [FromQuery] string searchValue
+    )
+    {
+        try
+        {
+            if (string.IsNullOrWhiteSpace(searchValue))
+            {
+                return Ok(await _userService.GetAllUsersAsync());
+            }
+            
+            return Ok(await _userService.GetUsersBySearchValue(searchValue));
+        }
+        catch
+        {
+            return NotFound();
         }
     }
 
