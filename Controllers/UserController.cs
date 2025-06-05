@@ -123,12 +123,13 @@ public class UserController : Controller
     }
 
     [HttpDelete("{userId}")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> DeleteUser(int userId)
     {
         try
         {
             await _userService.DeleteUserAsync(userId);
-            return Ok("Usuário Deletado");
+            return Ok(new { message = "Usuário Deletado" } );
         }
         catch (KeyNotFoundException e)
         {
