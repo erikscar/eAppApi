@@ -89,6 +89,29 @@ public class UserService : IUserService
         await _userRepository.UpdateAsync(userToUpdate);
     }
 
+    public async Task AdminUpdateUserAsync(User user, int userId)
+    {
+        var userToUpdate = await _userRepository.GetByIdAsync(userId);
+
+        if (userToUpdate == null)
+        {
+            throw new KeyNotFoundException("Usuário Não Encontrado para Atualização");
+        }
+
+        userToUpdate.FirstName = user.FirstName;
+        userToUpdate.LastName = user.LastName;
+        userToUpdate.Email = user.Email;
+        userToUpdate.Phone = user.Phone;
+        userToUpdate.ImageUrl = user.ImageUrl;
+
+        if (!string.IsNullOrWhiteSpace(user.PasswordHash))
+        {
+            userToUpdate.PasswordHash = user.PasswordHash;
+        }
+
+        await _userRepository.UpdateAsync(userToUpdate);
+    }
+
     public async Task DeleteUserAsync(int userId)
     {
         var userToDelete = await _userRepository.GetByIdAsync(userId);

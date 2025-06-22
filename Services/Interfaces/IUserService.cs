@@ -10,5 +10,6 @@ public interface IUserService
     Task<ICollection<User>> GetAllUsersAsync();
     Task<User> CreateUserAsync(User user);
     Task UpdateUserAsync(User user, int userId);
+    Task AdminUpdateUserAsync(User user, int userId);
     Task DeleteUserAsync(int userId);
 }

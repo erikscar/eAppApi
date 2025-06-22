@@ -122,6 +122,21 @@ public class UserController : Controller
         }
     }
 
+    [HttpPut("{userId}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult> AdminUpdateUserAsync(int userId, [FromBody]User user)
+    {
+        try
+        {
+            await _userService.AdminUpdateUserAsync(user, userId);
+            return Ok(new { message = "Usuário Atualizado pelo Admin" });
+        }
+        catch (KeyNotFoundException e)
+        { 
+            return BadRequest(e.Message); 
+        }
+    }
+
     [HttpDelete("{userId}")]
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult> DeleteUser(int userId)

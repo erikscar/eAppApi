@@ -56,6 +56,12 @@ public class UserRepository : IUserRepository
         await _context.SaveChangesAsync();
     }
 
+    public async Task AdminUpdateAsync(User user)
+    {
+        _context.Entry(user).State |= EntityState.Modified;
+        await _context.SaveChangesAsync();  
+    }
+
     public async Task DeleteAsync(int userId)
     {
         User userToDelete = await _context.Users.FindAsync(userId);
