@@ -444,4 +444,3 @@ C:\Users\eriks\Desktop\eAppApi\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\eriks\Desktop\eAppApi\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\eriks\Desktop\eAppApi\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\eriks\Desktop\eAppApi\obj\Debug\net9.0\staticwebassets.build.json.cache
-C:\Users\eriks\Desktop\eAppApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
