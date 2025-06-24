@@ -7,6 +7,7 @@ namespace eApp.Services.Interfaces
     {
         Task<ICollection<ProductDTO>> GetAllProductsAsync();
         Task<ProductDTO> GetProductByIdAsync(int productId);
+        Task<Product> CreateProductAsync(Product product);
         Task<ICollection<Product>> GetProductByCategory(string category);
         Task<ICollection<Product>> FilterProductsAsync(string? searchValue);
     }

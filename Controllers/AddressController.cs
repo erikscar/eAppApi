@@ -2,6 +2,7 @@ using eApp.Models;
 using eApp.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace eApp.Controllers;
 
@@ -20,7 +21,7 @@ public class AddressController : Controller
     [Authorize]
     public async Task<IActionResult> GetAddress()
     {
-        int userId = int.Parse(User.FindFirst("id")?.Value);
+        int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
         return Ok(await _addressService.GetAddressByUser(userId));
     }
 
@@ -28,7 +29,7 @@ public class AddressController : Controller
     [Authorize]
     public async Task<IActionResult> UpdateAddress(Address address)
     {
-        var userId = User.FindFirst("id")?.Value;
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         await _addressService.UpdateAddress(address, int.Parse(userId));
         return Ok(new { message = "Usuário Atualizado" });
     }

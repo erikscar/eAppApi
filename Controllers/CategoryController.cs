@@ -13,6 +13,7 @@ namespace eapp.Controllers
         {
             _categoryService = categoryService;
         }
+        [HttpGet]
         public async Task<ActionResult<ICollection<Category>>> GetAllCategoriesAsync()
         {
             try

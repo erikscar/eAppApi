@@ -59,6 +59,11 @@ namespace eApp.Services
             };
         }
 
+        public async Task<Product> CreateProductAsync(Product product)
+        {
+            return await _productRepository.CreateProductAsync(product);
+        }
+
         public async Task<ICollection<Product>> FilterProductsAsync(string searchValue)
         {
             return await _productRepository.GetProductsByFilterAsync(searchValue);

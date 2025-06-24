@@ -29,6 +29,14 @@ namespace eApp.Repositories
             return await _context.Products.Include(product => product.Reviews).FirstOrDefaultAsync(p => p.Id == productId);
         }
 
+        public async Task<Product> CreateProductAsync(Product product)
+        {
+            await _context.Products.AddAsync(product);
+            await _context.SaveChangesAsync();
+
+            return product;
+        }
+
         public async Task<ICollection<Product>> GetProductsByFilterAsync(string searchValue)
         {
             return await _context

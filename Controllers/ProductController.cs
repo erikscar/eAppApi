@@ -43,6 +43,20 @@ namespace eApp.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<ActionResult<Product>> CreateProductAsync([FromBody] Product product)
+        {
+            try
+            {
+                await _productService.CreateProductAsync(product); 
+                return Ok(product);
+            }
+            catch (KeyNotFoundException e)
+            {
+                return NotFound(e.Message);
+            }
+        }
+
         [HttpGet("search")]
         public async Task<ActionResult<ICollection<Product>>> GetProductsBySearchValue([FromQuery] string searchValue)
         {
