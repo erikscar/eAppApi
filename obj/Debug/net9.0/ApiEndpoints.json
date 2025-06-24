@@ -171,6 +171,43 @@
   },
   {
     "ContainingType": "eApp.Controllers.ProductController",
+    "Method": "UpdateProductAsync",
+    "RelativePath": "api/Product/{productId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "product",
+        "Type": "eApp.Models.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eApp.Controllers.ProductController",
+    "Method": "RemoveProductAsync",
+    "RelativePath": "api/Product/{productId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eApp.Controllers.ProductController",
     "Method": "GetProductsByCategory",
     "RelativePath": "api/Product/category",
     "HttpMethod": "GET",

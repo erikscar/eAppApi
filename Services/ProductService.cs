@@ -33,6 +33,7 @@ namespace eApp.Services
                     Price = product.Price,
                     Offer = product.Offer,
                     ImageUrl = product.ImageUrl,
+                    CategoryId = product.CategoryId,
                     AverageRating =
                         product.Reviews.Count != 0
                             ? product.Reviews.Average(review => review.Rating) * 2
@@ -53,6 +54,7 @@ namespace eApp.Services
                 Price = product.Price,
                 Offer = product.Offer,
                 ImageUrl = product.ImageUrl,
+                CategoryId = product.CategoryId,
                 AverageRating = product.Reviews.Count != 0
                     ? product.Reviews.Average(review => review.Rating) * 2
                     : 0,
@@ -72,6 +74,25 @@ namespace eApp.Services
         public async Task<ICollection<Product>> GetProductByCategory(string category)
         {
             return await _productRepository.GetProductByCategory(category);
+        }
+
+        public async Task RemoveProductAsync(int productId)
+        {
+            await _productRepository.RemoveProductAsync(productId);
+        }
+
+        public async Task UpdateProductAsync(Product product, int productId)
+        {
+            var productToUpdate = await _productRepository.GetProductById(productId);
+
+            productToUpdate.Name = product.Name;
+            productToUpdate.Description = product.Description;
+            productToUpdate.Price = product.Price;
+            productToUpdate.Offer = product.Offer;
+            productToUpdate.CategoryId = product.CategoryId;
+            productToUpdate.ImageUrl = product.ImageUrl;
+
+            await _productRepository.UpdateProductAsync(productToUpdate);
         }
     }
 }

@@ -10,5 +10,7 @@ namespace eApp.Services.Interfaces
         Task<Product> CreateProductAsync(Product product);
         Task<ICollection<Product>> GetProductByCategory(string category);
         Task<ICollection<Product>> FilterProductsAsync(string? searchValue);
+        Task UpdateProductAsync(Product product, int productId);   
+        Task RemoveProductAsync(int productId);
     }
 }

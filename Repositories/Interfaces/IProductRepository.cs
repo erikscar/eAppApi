@@ -9,5 +9,7 @@ namespace eApp.Repositories.Interfaces
         Task<Product> CreateProductAsync(Product product);
         Task<ICollection<Product>> GetProductByCategory(string category);
         Task<ICollection<Product>> GetProductsByFilterAsync(string searchValue);
+        Task<Product> UpdateProductAsync(Product product);
+        Task<Product> RemoveProductAsync(int productId);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using eApp.Models;
 using eApp.Models.DTOs;
 using eApp.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eApp.Controllers
@@ -69,6 +70,22 @@ namespace eApp.Controllers
         {
             var products = await _productService.GetProductByCategory(category);
             return Ok(products);
+        }
+
+        [HttpPut("{productId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> UpdateProductAsync(int productId, Product product)
+        {
+          await _productService.UpdateProductAsync(product, productId);
+            return Ok(new { message = "Produto Atualizado com Sucesso" });
+        }
+
+        [HttpDelete("{productId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> RemoveProductAsync(int productId)
+        {
+            await _productService.RemoveProductAsync(productId);
+            return (Ok(new { message = "Usuário Removido com Sucesso" }));
         }
     }
 }

@@ -9,5 +9,6 @@
         public string? ImageUrl { get; set; }
         public int Offer { get; set; }
         public double AverageRating { get; set; }
+        public int CategoryId { get; set; }
     }
 }
