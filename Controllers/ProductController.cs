@@ -85,7 +85,7 @@ namespace eApp.Controllers
         public async Task<ActionResult> RemoveProductAsync(int productId)
         {
             await _productService.RemoveProductAsync(productId);
-            return (Ok(new { message = "Usuário Removido com Sucesso" }));
+            return Ok(new { message = "Usuário Removido com Sucesso" });
         }
     }
 }

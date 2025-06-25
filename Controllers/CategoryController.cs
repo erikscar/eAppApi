@@ -1,5 +1,6 @@
 using eApp.Models;
 using eApp.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eapp.Controllers
@@ -25,5 +26,29 @@ namespace eapp.Controllers
                 return NotFound(e.Message);
             }
         }
+        [HttpGet("searchValue")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<ICollection<Category>>> GetCategoryBySearchValueAsync([FromQuery] string searchValue)
+        {
+            return Ok(await _categoryService.GetCategoriesBySearchValue(searchValue));
+        }
+
+        [HttpDelete("{categoryId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> RemoveCategoryAsync(int categoryId)
+        {
+            await _categoryService.RemoveCategoryAsync(categoryId);
+
+            return Ok(new { message = "Categoria Removida com Sucesso!" });
+        }
+
+        [HttpPut("{categoryId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> UpdateCategoryAsync(Category category, int categoryId)
+        {
+            await _categoryService.UpdateCategoryAsync(category, categoryId);
+            return Ok(new { message = "Categoria Atualizada com Sucesso" });
+        }
+
     }
 }

@@ -14,6 +14,9 @@ public class CategoryMap : BaseMap<Category>
         .IsRequired()
         .HasColumnType("VARCHAR(100)");
 
+        builder.Property(category => category.ImageUrl)
+        .HasColumnType("VArCHAR(500)");
+
         builder.Property(category => category.Description)
         .IsRequired()
         .HasColumnType("VARCHAR(255)");
