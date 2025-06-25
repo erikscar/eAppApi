@@ -26,11 +26,19 @@ namespace eapp.Controllers
                 return NotFound(e.Message);
             }
         }
-        [HttpGet("searchValue")]
+        [HttpGet("search")]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ICollection<Category>>> GetCategoryBySearchValueAsync([FromQuery] string searchValue)
         {
             return Ok(await _categoryService.GetCategoriesBySearchValue(searchValue));
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<Category>> CreateCategoryAsync([FromBody] Category category)
+        {
+            await _categoryService.CreateCategoryAsync(category);
+            return Ok(category);
         }
 
         [HttpDelete("{categoryId}")]

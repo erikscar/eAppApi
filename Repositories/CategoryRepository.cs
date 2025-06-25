@@ -13,6 +13,15 @@ namespace eApp.Repositories
         {
             _context = context;
         }
+
+        public async Task<Category> CreateCategoryAsync(Category category)
+        {
+            await _context.Categories.AddAsync(category);
+            await _context.SaveChangesAsync();
+
+            return category;
+        }
+
         public async Task<ICollection<Category>> GetAllCategoriesAsync()
         {
             return await _context.Categories.ToListAsync();
@@ -22,14 +31,16 @@ namespace eApp.Repositories
         {
             return await _context.Categories.FindAsync(categoryId);
         }
+
         public async Task<ICollection<Category>> GetCategoryBySearchValue(string searchValue)
         {
             string pattern = $"%{searchValue.Trim().ToLower()}%";
 
-            return await _context.Categories.Where(c =>
-            EF.Functions.Like(c.Name, pattern) ||
-            EF.Functions.Like(c.Description, pattern))
-            .ToListAsync();
+            return await _context
+                .Categories.Where(c =>
+                    EF.Functions.Like(c.Name, pattern) || EF.Functions.Like(c.Description, pattern)
+                )
+                .ToListAsync();
         }
 
         public async Task RemoveCategoryAsync(int categoryId)

@@ -7,6 +7,7 @@ namespace eApp.Repositories.Interfaces
         Task<ICollection<Category>> GetAllCategoriesAsync();
         Task<Category> GetCategoryByIdAsync(int categoryId);
         Task<ICollection<Category>> GetCategoryBySearchValue(string searchValue);
+        Task<Category> CreateCategoryAsync(Category category);
         Task UpdateCategoryAsync(Category category);
         Task RemoveCategoryAsync(int categoryId);
     }

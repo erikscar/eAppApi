@@ -47,5 +47,10 @@ namespace eApp.Services
             categoryToUpdate.ImageUrl = categoryToUpdate.ImageUrl;
             await _categoryRepository.UpdateCategoryAsync(categoryToUpdate);
         }
+
+        public async Task<Category> CreateCategoryAsync(Category category)
+        {
+           return await _categoryRepository.CreateCategoryAsync(category);
+        }
     }
 }
