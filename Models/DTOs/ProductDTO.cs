@@ -1,6 +1,6 @@
 ﻿namespace eApp.Models.DTOs
 {
-    public class ProductDTO
+    public class ProductDTO : EntityBase
     {
         public int Id { get; set; }
         public string? Name { get; set; }
@@ -10,5 +10,6 @@
         public int Offer { get; set; }
         public double AverageRating { get; set; }
         public int CategoryId { get; set; }
+  
     }
 }
