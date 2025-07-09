@@ -44,7 +44,7 @@ builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 
-
+builder.Services.AddScoped<IDashboardService, DashboardService>();
 
 builder.Services.AddScoped<TokenService>();
 builder.Services.AddOpenApi();  
