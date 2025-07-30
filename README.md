@@ -145,6 +145,22 @@ dotnet run
 *Pull requests são bem-vindos! Sinta-se livre para abrir issues para reportar bugs, sugerir melhorias ou discutir funcionalidades.*
 
 
+## 👥 Contas de Acesso para Testes
+
+Para facilitar os testes e demonstração da aplicação, você pode utilizar a seguinte conta de administrador:
+
+### 🔐 Conta Admin
+- **Email:** `admin@gmail.com`  
+- **Senha:** `123`
+
+Essa conta possui acesso completo ao painel administrativo.
+
+---
+
+### 👤 Conta de Usuário Comum
+Para acessar a plataforma como usuário comum, basta se registrar diretamente na aplicação utilizando a funcionalidade de **cadastro**.
+
+
 ## Aprendizado 
 
 - Integração entre frontend Angular e backend ASP.NET Core com Entity Framework.
