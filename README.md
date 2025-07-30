@@ -108,9 +108,9 @@ git clone https://github.com/erikscar/eAppApi.git
 ### 4. Inicie o Back-End (ASP.NET Core)
 
 ```bash
-cd eApp
-npm install
-ng serve
+cd eAppApi
+dotnet restore
+dotnet ef database update
 ```
 *O API será executada por padrão em: http://localhost:5104*
 
