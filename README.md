@@ -2,17 +2,22 @@
 
 Este repositório contém uma aplicação web fullstack dividida em dois projetos:
 
-- **Frontend:** [eApp](https://github.com/erikscar/eapp) – Repositório `AngularJS`
-- **Backend:** [eaAppApi](https://github.com/erikscar/eAppApi) – Repositório `ASP.NET Core`
+- **Frontend:** [eApp](https://github.com/erikscar/eapp) – Repositório Angular (versão 2+)
+- **Backend:** [eAppApi](https://github.com/erikscar/eAppApi) – Repositório ASP.NET Core
+
 ---
 
-- ## Visão Geral
+## Visão Geral
 
-**Frontend (Marketplace):** Uma plataforma onde os usuários podem visualizar produtos, pesquisar por meio de um mecanismo de busca, adicionar itens ao carrinho e comentar em produtos. A interface foi projetada para ser intuitiva e responsiva, proporcionando uma experiência agradável tanto para navegação quanto para interação com os itens disponíveis.
+**Frontend (Marketplace):**  
+Uma plataforma onde os usuários podem visualizar produtos, pesquisar por meio de um mecanismo de busca, adicionar itens ao carrinho e comentar em produtos. A interface foi projetada para ser intuitiva e responsiva, proporcionando uma experiência agradável tanto para navegação quanto para interação com os itens disponíveis.
 
-**Backend (API REST):** Uma API robusta, desenvolvida com **ASP.NET Core**, que oferece funcionalidades completas de **CRUD** para gerenciamento dos recursos do sistema. A autenticação e autorização são gerenciadas por meio de **Tokens JWT**, permitindo controle refinado de roles e permissões com base no nível de acesso do usuário. Além disso, a arquitetura segue o padrão de projeto Repository Pattern, promovendo maior organização, testabilidade e desacoplamento entre as camadas da aplicação.
+**Backend (API REST):**  
+Uma API robusta, desenvolvida com **ASP.NET Core**, que oferece funcionalidades completas de **CRUD** para gerenciamento dos recursos do sistema. A autenticação e autorização são gerenciadas por meio de **Tokens JWT**, permitindo controle refinado de roles e permissões com base no nível de acesso do usuário. Além disso, a arquitetura segue o padrão de projeto Repository Pattern, promovendo maior organização, testabilidade e desacoplamento entre as camadas da aplicação.
 
 *O usuário pode clonar este repositório, iniciar os dois serviços localmente e visualizar a aplicação completa rodando em sua máquina.*
+
+---
 
 ## Funcionalidades
 
@@ -24,17 +29,17 @@ Este repositório contém uma aplicação web fullstack dividida em dois projeto
   - Admin   => Painel Administrativo do Admin
 
 ---
- 
+
 ### Página Inicial
 - Exibição de **Cards de Categorias** com botão para pesquisar os produtos relacionados
 - Cards exibindo:
   - **Todos os Produtos** disponíveis
   - **Produtos Populares** de acordo com a avaliação dos usuários
- 
+
 ---
 
 ### Funcionalidades do Usuário
-- Página Individual de Produtos com:
+- Página individual de produtos com:
   - Botão "Adicionar ao Carrinho"
   - Campo para "Adicionar Comentário / Avaliação"
 - Carrinho de Compras com:
@@ -47,14 +52,14 @@ Este repositório contém uma aplicação web fullstack dividida em dois projeto
 
 ### Painel Administrativo
 - **Dashboard** com visão geral do sistema:
-  - Gráficos de **registros recentes**, **produtos por categoria (% e quantidade)** e **overview de receita**.
-- Página de **configurações de tema e cores do sistema**.
-- Área de administração com **CRUD completo** e Tabelas para:
+  - Gráficos de **registros recentes**, **produtos por categoria (% e quantidade)** e **overview de receita**
+- Página de **configurações de tema e cores do sistema**
+- Área de administração com **CRUD completo** e tabelas para:
   - Produtos
   - Categorias
   - Usuários
-- Botão com funcionalidade de exportação para uma **TABELA EXCEL**
- 
+- Botão para exportação da tabela para **arquivo Excel**
+
 ---
 
 ### Tratamento de Erros
@@ -63,12 +68,12 @@ Este repositório contém uma aplicação web fullstack dividida em dois projeto
 
 ---
 
-- ## Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-- **AngularJS** - Front-End
-- **ASP.NET Core** - Back-End
-- **Entity Framework**
-- **SQL Server** - Banco de Dados
+- **Angular** (versão 2+)
+- **ASP.NET Core**
+- **Entity Framework Core**
+- **SQL Server**
 - **Fluent API**
 - **API REST**
 - **TypeScript**
@@ -77,14 +82,19 @@ Este repositório contém uma aplicação web fullstack dividida em dois projeto
 - **HTML5 + SCSS**
 
 ---
-- ### Pré-Requisitos
-- [Node.js](https://nodejs.org/) (v16 ou superior)
-- [Angular CLI](https://angular.dev/installation)
-- [.NET SDK](https://dotnet.microsoft.com/en-us/download) (v6.0 ou superior)
-- Git instalado
+
+## Pré-Requisitos
+
+- [Node.js](https://nodejs.org/) (v16 ou superior)  
+- [Angular CLI](https://angular.io/cli)  
+- [.NET SDK](https://dotnet.microsoft.com/en-us/download) (v6.0 ou superior)  
+- Git instalado  
+
 ---
 
-### 1. Clone o Repositório (Front-End = eApp)
+## Como Rodar o Projeto
+
+### 1. Clone o Repositório do Front-End
 
 ```bash
 git clone https://github.com/erikscar/eapp.git
@@ -93,8 +103,8 @@ git clone https://github.com/erikscar/eapp.git
 ### 2. Inicie o Front-End (Angular)
 
 ```bash
-cd eApp
-npm intall
+cd eapp
+npm install
 ng serve
 ```
 *O Angular rodará por padrão em: http://localhost:4200*
@@ -111,7 +121,24 @@ git clone https://github.com/erikscar/eAppApi.git
 cd eAppApi
 dotnet restore
 dotnet ef database update
+dotnet run
 ```
+
+*Caso não tenha a ferramenta dotnet-ef instalada, instale-a globalmente com*
+
+```bash
+dotnet tool install --global dotnet-ef
+dotnet run
+```
+
+*Ou, para instalação local no projeto, execute:*
+
+```bash
+dotnet tool install --local dotnet-ef
+dotnet tool run dotnet-ef database update
+dotnet run
+```
+
 *O API será executada por padrão em: http://localhost:5104*
 
 *Pull requests são bem-vindos! Sinta-se livre para abrir issues para reportar bugs, sugerir melhorias ou discutir funcionalidades.*
